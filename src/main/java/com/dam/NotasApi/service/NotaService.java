@@ -4,10 +4,11 @@
  */
 package com.dam.NotasApi.service;
 
-/**
- *
- * @author AlumnadoTarde
- */
-public class NotaService {
-    
+import com.dam.NotasApi.model.Nota;
+import org.springframework.data.domain.Sort;
+
+import java.util.List;
+
+public interface NotaService extends CrudService<Nota, Long> {
+    List<Nota> findByUsuarioId(Long usuarioId, Sort sort);
 }

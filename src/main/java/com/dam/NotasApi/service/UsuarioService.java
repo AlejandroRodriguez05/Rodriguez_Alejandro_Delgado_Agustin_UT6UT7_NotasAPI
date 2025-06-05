@@ -4,10 +4,10 @@
  */
 package com.dam.NotasApi.service;
 
-/**
- *
- * @author AlumnadoTarde
- */
-public class UsuarioService {
-    
+import com.dam.NotasApi.model.Usuario;
+import java.util.Optional;
+
+public interface UsuarioService extends CrudService<Usuario, Long> {
+    Optional<Usuario> findByEmail(String email);
 }
+

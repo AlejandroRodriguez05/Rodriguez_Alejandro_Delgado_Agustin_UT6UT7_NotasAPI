@@ -4,14 +4,14 @@
  */
 package com.dam.NotasApi.repository;
 
-import com.tuapp.notasapi.model.Usuario;
+import com.dam.NotasApi.model.Nota;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.Optional;
+import java.util.List;
 
 @Repository
-public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
-    Optional<Usuario> findByEmail(String email);
-    Boolean existsByEmail(String email);
+public interface NotaRepository extends JpaRepository<Nota, Long> {
+    List<Nota> findByUsuarioId(Long usuarioId, Sort sort);
 }

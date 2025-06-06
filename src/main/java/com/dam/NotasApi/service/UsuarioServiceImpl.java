@@ -4,10 +4,24 @@
  */
 package com.dam.NotasApi.service;
 
-/**
- *
- * @author AlumnadoTarde
- */
-public class UsuarioServiceImpl {
-    
+import com.dam.NotasApi.model.Usuario;
+import com.dam.NotasApi.repository.UsuarioRepository;
+import com.dam.NotasApi.service.UsuarioService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.Optional;
+
+@Service
+public class UsuarioServiceImpl extends AbstractCrudService<Usuario, Long, UsuarioRepository> implements UsuarioService {
+
+    @Autowired
+    public UsuarioServiceImpl(UsuarioRepository repository) {
+        super(repository);
+    }
+
+    @Override
+    public Optional<Usuario> findByEmail(String email) {
+        return repository.findByEmail(email);
+    }
 }

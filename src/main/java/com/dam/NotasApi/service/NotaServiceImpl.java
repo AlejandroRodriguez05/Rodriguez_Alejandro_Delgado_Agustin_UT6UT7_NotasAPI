@@ -4,10 +4,25 @@
  */
 package com.dam.NotasApi.service;
 
-/**
- *
- * @author AlumnadoTarde
- */
-public class NotaServiceImpl {
-    
+import com.dam.NotasApi.model.Nota;
+import com.dam.NotasApi.repository.NotaRepository;
+import com.dam.NotasApi.service.NotaService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+public class NotaServiceImpl extends AbstractCrudService<Nota, Long, NotaRepository> implements NotaService {
+
+    @Autowired
+    public NotaServiceImpl(NotaRepository repository) {
+        super(repository);
+    }
+
+    @Override
+    public List<Nota> findByUsuarioId(Long usuarioId, Sort sort) {
+        return repository.findByUsuarioId(usuarioId, sort);
+    }
 }

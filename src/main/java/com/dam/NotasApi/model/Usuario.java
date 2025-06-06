@@ -4,6 +4,7 @@
  */
 package com.dam.NotasApi.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -35,6 +36,7 @@ public class Usuario {
     private String passwordHash;
 
     @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
     private List<Nota> notas = new ArrayList<>();
 
     // Constructores, getters y setters permanecen iguales

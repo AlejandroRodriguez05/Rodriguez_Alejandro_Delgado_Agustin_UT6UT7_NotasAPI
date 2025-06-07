@@ -13,6 +13,16 @@ Se puede probar utilizando *Postman* o herramientas como *cURL*.
 
 ## Instrucciones de ejecución
 
+## Antes de ejecutar
+
+Asegúrate de tener XAMPP encendido con el módulo MySQL activado.
+
+Abre phpMyAdmin o tu base de datos preferida.
+
+Crea una base de datos llamada exactamente:
+
+CREATE DATABASE NotasApi;
+
 ### Opción 1: Ejecutar con *Visual Studio Code*
 
 1. Abre el proyecto en VS Code.

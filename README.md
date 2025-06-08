@@ -37,7 +37,7 @@ CREATE DATABASE NotasApi;
 3. Haz clic derecho sobre el nombre del proyecto y selecciona *"Run"* o *"Ejecutar"*.
 4. NetBeans compilará y arrancará automáticamente Spring Boot.
 
-### Probar la API
+## Probar la API
 
 Una vez en ejecución, accede a los endpoints en http://localhost:8080/api/v1 o http://localhost:8080/api/v2.  
 Puedes hacer peticiones usando Postman, por ejemplo las capturas que estan en el .odt
